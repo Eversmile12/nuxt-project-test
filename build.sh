@@ -1,8 +1,9 @@
 #!/bin/bash
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add
+echo parsing yarn
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-apt update
-apt install yarn
+apt update -y
+apt install yarn -y
 yarn add nuxt
-yarn generate
+yarn generate --non-interactive
 
