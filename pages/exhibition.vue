@@ -1,30 +1,16 @@
 <template> 
-  <div class="container">
-    <h1 >
-    {{pictureOfTheDay.title}}
-    </h1>
-    <p>{{pictureOfTheDay.explanation}}</p>
-    <img :src="pictureOfTheDay.url" :title="pictureOfTheDay.title">
-    <blog-section></blog-section>
-    
+  <div class="container">   
+    <add-to-cart title="francisco "></add-to-cart>
+    <add-to-cart title="marcelo"></add-to-cart>
   </div>
 </template>
 
 
 <script>
-import { mapState } from "vuex"
-import blogSection from "../components/blogSection.vue"
+import addToCart from "../components/addToCart.vue"
   export default{
     components:{
-      blogSection
-    },
-    computed:{
-      ...mapState([
-        "pictureOfTheDay",
-      ])
-    },
-    mounted(){
-      this.$store.dispatch("getPictureOfTheDay")
+      addToCart
     }
   }
 </script>

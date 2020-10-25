@@ -1,11 +1,25 @@
 export const state = () => ({
     pictureOfTheDay: "",
-    count: 4
+    totalItems: 0,
+    cart: {
+            
+    }
 })
 
 export const mutations = {
     updatePictureOfTheDay:(state, payload) =>{
         state.pictureOfTheDay = payload
+    },
+
+    addToCart:(state, payload) =>{
+        console.log(payload.exhibit);
+        if(state.cart[payload.exhibit] == null){
+            state.cart[payload.exhibit] = 1
+        }else{
+            state.cart[payload.exhibit] += Number(1);    
+        }        
+        state.totalItems += 1;
+        console.log(state.cart);
     }
 }
 
@@ -26,5 +40,6 @@ export const actions = {
             console.log("error while fetching: " + err)
         }
     }
+
 
 }

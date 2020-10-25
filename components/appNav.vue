@@ -9,11 +9,24 @@
                 <li class="nav-item">
                     <nuxt-link class="nav-link" to="/exhibition">Exhibit</nuxt-link>
                 </li>
+                <li>
+                    <p>{{cartTotal}}</p>
+                </li>
             </ul>
          </nav>
     </div>
 </template>
 
+
+<script>
+    export default {
+        computed:{
+            cartTotal(){
+                return this.$store.state.totalItems
+            }
+        }
+    }
+</script>
 
 
 <style scoped>

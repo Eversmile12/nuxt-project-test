@@ -3,15 +3,20 @@
     <h1>
     Home Page
     </h1>
-    <a href="exhibition1">Ehibit page</a>
+    <picofday></picofday>
   </div>
 </template>
 
 
 <script>
-  export default{
+import picofday from "../components/picofday.vue"
 
+  export default{
+   components:{
+     picofday
+   },
   }
+
 </script>
 
 
