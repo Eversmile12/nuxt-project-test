@@ -1,5 +1,6 @@
 export const state = () => ({
-    pictureOfTheDay: ""
+    pictureOfTheDay: "",
+    count: 4
 })
 
 export const mutations = {
