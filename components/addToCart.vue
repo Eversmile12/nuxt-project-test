@@ -1,18 +1,14 @@
 <template>
-    <div>
-        <h3>{{title}}</h3>
-        <p>Lorem ipsum dolor sit amet</p>
-        <button @click = 'addToCart'>Add to cart</button>
+    <div class="card" style="width: 24rem">
+        <img class='cart-img-top' src='https://via.placeholder.com/350  ' title='#'>
+        <h5 class="card-title">{{title}}</h5>        
+        <p class='card-test'>Lorem ipsum dolor sit amet</p>
+        <button @click = 'addToCart' class="btn btn-primary">Add to cart</button>
     </div>
 </template>
 
 <script>
 export default {
-    data(){
-        return{
-            message: "Here is my message"
-        }
-    },
     props: ['title','description'],
     computed:{
         
@@ -20,7 +16,8 @@ export default {
     methods:{
         addToCart:function(){
             let exhibit = {
-                exhibit: this.title
+                exhibit: this.title,
+                quantity: 1
             }
             this.$store.commit("addToCart", exhibit)
         }
@@ -29,5 +26,9 @@ export default {
 </script>
 
 <style scoped>
-
+div{
+   
+    display: inline-block;
+    margin: 3% 3%;
+}
 </style>

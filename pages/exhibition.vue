@@ -1,7 +1,14 @@
 <template> 
   <div class="container">   
-    <add-to-cart title="francisco "></add-to-cart>
-    <add-to-cart title="marcelo"></add-to-cart>
+    <div>
+      <add-to-cart title="francisco "></add-to-cart>
+      <add-to-cart title="marcelo"></add-to-cart>
+    </div>
+    <div>
+      <add-to-cart title="francisco "></add-to-cart>
+      <add-to-cart title="marcelo"></add-to-cart>
+      
+    </div>
   </div>
 </template>
 
@@ -17,4 +24,5 @@ import addToCart from "../components/addToCart.vue"
 
 
 <style>
+
 </style>

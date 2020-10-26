@@ -1,9 +1,7 @@
 export const state = () => ({
     pictureOfTheDay: "",
     totalItems: 0,
-    cart: {
-            
-    }
+    cart: []
 })
 
 export const mutations = {
@@ -12,12 +10,13 @@ export const mutations = {
     },
 
     addToCart:(state, payload) =>{
-        console.log(payload.exhibit);
-        if(state.cart[payload.exhibit] == null){
-            state.cart[payload.exhibit] = 1
-        }else{
-            state.cart[payload.exhibit] += Number(1);    
-        }        
+        for(let i = 0; i < state.cart.length; i++){
+            if (state.cart[i].exhibit == payload.exhibit){
+                state.cart[i].quantity += 1;
+                return
+            } 
+        }   
+        state.cart.push(payload);
         state.totalItems += 1;
         console.log(state.cart);
     }
